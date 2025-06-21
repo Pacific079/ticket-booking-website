@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Ticket Booking</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #2b5876, #4e4376);
+      padding: 50px 20px;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+       /* Header */
+    /* .header {
+      background: #1a237e;
+      color: #fff;
+      padding: 24px 0;
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    } */
+
+    /* Navigation */
+    /* .navbar {
+      display: flex;
+      justify-content: center;
+      background: #283593;
+      padding: 12px 0;
+    } */
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .navbar a:hover {
+      color: #ffd600;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: #4e4376;
+      margin-bottom: 25px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    form input,
+    form select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      margin-top: 5px;
+    }
+
+    form input:focus,
+    form select:focus {
+      border-color: #4e4376;
+      outline: none;
+    }
+
+    .btn {
+      background: #4e4376;
+      color: white;
+      border: none;
+      padding: 15px;
+      width: 100%;
+      font-size: 18px;
+      border-radius: 12px;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      
+    }
+
+    
+    .btn:hover {
+      background: #2b5876;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎟️ Book Your Tickets</h1>
+    
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="form.html">My Tickets</a>
+  </div>
+  </header>
+
+  <div class="container">
+    <h2>Ticket Booking Form</h2>
+    <form id="bookingForm">
+      <label for="movie">🎬 Movie Name</label>
+      <select id="movie" name="movie" required>
+        <option value="">-- Select a Movie --</option>
+        <option>Oppenheimer</option>
+        <option>Jawan</option>
+        <option>RRR</option>
+        <option>Avengers: Endgame</option>
+      </select>
+
+      <label for="date">📅 Date</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">⏰ Show Time</label>
+      <select id="time" name="time" required>
+        <option value="">-- Choose Time --</option>
+        <option>10:00 AM</option>
+        <option>1:00 PM</option>
+        <option>4:00 PM</option>
+        <option>7:00 PM</option>
+        <option>10:00 PM</option>
+      </select>
+
+      <label for="tickets">🎫 Number of Tickets</label>
+      <select id="tickets" name="tickets" required>
+        <option value="1">1 Ticket</option>
+        <option value="2">2 Tickets</option>
+        <option value="3">3 Tickets</option>
+        <option value="4">4 Tickets</option>
+      </select>
+
+      <label for="name">👤 Full Name</label>
+      <input type="text" id="name" name="name" placeholder="e.g. Aryan Kapoor" required />
+
+      <label for="email">📧 Email Address</label>
+      <input type="email" id="email" name="email" placeholder="e.g. aryan@email.com" required />
+
+     <button class="btn" type="submit">✅ Confirm Booking</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    © 2025 Pacific | Designed with ❤️
+  </div>
+
+</body>
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent actual form submission
+    window.location.href = 'pay.html'; // Redirect to payment page
+  });
+</script>
+</html>

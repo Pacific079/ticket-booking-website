@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Movie Booking</title>
+    <style>
+        body {
+            background: #f5f7fa;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header */
+    .header {
+      background: #1a237e;
+      color: #fff;
+      padding: 24px 0;
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background: #283593;
+      padding: 12px 0;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .navbar a:hover {
+      color: #ffd600;
+    }
+        .payment-container {
+            max-width: 400px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(40,53,147,0.08);
+            padding: 32px 24px;
+        }
+        h2 {
+            text-align: center;
+            color: #1a237e;
+            margin-bottom: 24px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #283593;
+            font-weight: 500;
+            
+        }
+        input, select {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border: 1px solid #bdbdbd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .pay-btn {
+            width: 100%;
+            background: #ffd600;
+            color: #1a237e;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .pay-btn:hover {
+            background: #fffde7;
+        }
+        .summary {
+            background: #f0f4ff;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Ticket Booking</div>
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="form.html">My Tickets</a>
+  </div>
+    <div class="payment-container">
+        <h2>Payment</h2>
+        <div class="summary">
+            <strong>Movie:</strong> Oppenheimer<br>
+            <strong>Date:</strong>  25th June, 7:00 PM<br>
+            <strong>Seats:</strong> A10, A11<br>
+            <strong>Total:</strong> ₹349
+        </div>
+        <form id="bookingForm">
+            <label for="name">Cardholder Name</label>
+            <input type="text" id="name" name="name" placeholder="Name on Card" required>
+
+            <label for="card">Card Number</label>
+            <input type="text" id="card" name="card" maxlength="19" placeholder="1234 5678 9012 3456" required>
+
+            <label for="expiry">Expiry Date</label>
+            <input type="text" id="expiry" name="expiry" maxlength="5" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" name="cvv" maxlength="4" placeholder="123" required>
+
+            <button type="submit" class="pay-btn">Pay ₹349</button>
+        </form>
+    </div>
+</body>
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent actual form submission
+    window.location.href = 'form.html'; // Redirect to payment page
+  });
+</script>
+</html>
